@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finote.project.controller.TransactionController">
+   <children>
+      <TextField layoutX="14.0" layoutY="132.0" prefHeight="25.0" prefWidth="814.0" promptText="Cari Transaksi" />
+      <Button layoutX="835.0" layoutY="132.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="163.0" text="Cari" />
+      <TableView fx:id="tableTransactionHistory" layoutX="14.0" layoutY="168.0" prefHeight="245.0" prefWidth="984.0">
+         <columns>
+            <TableColumn fx:id="tableColId" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="tableColTgl" prefWidth="117.0" text="Tanggal" />
+            <TableColumn fx:id="colFromOrTo" prefWidth="183.0" text="Dari/Kepada" />
+            <TableColumn fx:id="colDeskripsi" prefWidth="296.0" text="Deskripsi" />
+            <TableColumn fx:id="colKredit" prefWidth="160.0" text="Kredit" />
+            <TableColumn fx:id="colDebit" prefWidth="151.0" text="Debit" />
+         </columns>
+      </TableView>
+      <Separator layoutX="14.0" layoutY="83.0" prefHeight="0.0" prefWidth="983.0" />
+      <Label layoutX="14.0" layoutY="88.0" prefHeight="17.0" prefWidth="235.0" text="Detail Transaksi">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="68.0" prefWidth="502.0" text="Saldo">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Label>
+      <Separator layoutX="14.0" layoutY="488.0" prefHeight="34.0" prefWidth="984.0" />
+      <Label layoutX="36.0" layoutY="474.0" prefHeight="34.0" prefWidth="197.0" text="Tambah Transaksi">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="13.0" layoutY="522.0" prefHeight="168.0" prefWidth="593.0">
+         <children>
+            <Label text="Dari/Kepada" GridPane.rowIndex="1" />
+            <TextField fx:id="txtFromOrTo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Deskripsi" GridPane.rowIndex="2" />
+            <TextField fx:id="txtDescription" prefHeight="25.0" prefWidth="355.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Operasi" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbOperasi" prefHeight="25.0" prefWidth="297.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Jumlah" GridPane.rowIndex="4" />
+            <TextField fx:id="txtJumlah" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="btnSimpan" mnemonicParsing="false" onAction="#onAddNewTransaction" prefHeight="25.0" prefWidth="137.0" text="Simpan" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="ID" />
+            <TextField fx:id="txtTransactionId" editable="false" GridPane.columnIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Button layoutX="14.0" layoutY="422.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Edit" />
+      <Button fx:id="btnDeleteTransactionDetail" layoutX="173.0" layoutY="422.0" mnemonicParsing="false" onAction="#onBtnDeleteTransaction" prefHeight="25.0" prefWidth="155.0" text="Hapus" />
+   </children>
+</AnchorPane>
